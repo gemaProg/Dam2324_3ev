@@ -5,7 +5,7 @@ import net.datafaker.Faker;
 
 public class Main {
     public static void main(String[] args) {
-        Faker asdf  = new Faker();
+
         System.out.println("------------------Baloncesto---------------------------");
         for (int i = 0; i < 10 ; i++) {
             System.out.println(new Faker().basketball().positions());
