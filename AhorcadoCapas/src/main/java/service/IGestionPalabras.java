@@ -36,4 +36,5 @@ public interface IGestionPalabras {
     public boolean escribirFicheroBinario();
     public boolean cargarFicheroBinario();
 
+    public boolean eliminarPalabra(int id);
 }

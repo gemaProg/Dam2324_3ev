@@ -57,8 +57,8 @@ public class DaoPalabrasImplementacion implements DaoPalabras {
     }
 
     @Override
-    public void eliminarPalabra(int id) {
-
+    public boolean eliminarPalabra(int id) {
+        return lista.eliminaPalabra(3);
     }
 
     @Override

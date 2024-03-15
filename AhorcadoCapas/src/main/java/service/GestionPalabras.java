@@ -107,4 +107,9 @@ public class GestionPalabras implements IGestionPalabras {
     public boolean cargarFicheroBinario() {
         return false;
     }
+
+    @Override
+    public boolean eliminarPalabra(int id) {
+        return daoPalabras.eliminarPalabra(id);
+    }
 }

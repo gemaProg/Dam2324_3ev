@@ -8,8 +8,8 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         boolean queso = false;
 
-        System.out.println("Introduce un número entre 1 y 10");
-        /*try {
+        /*System.out.println("Introduce un número entre 1 y 10");
+        try {
             Comprobaciones.comprobarRango(teclado.nextInt());
         } catch (miExcepcion e) {
             System.out.println(e.getMessage());

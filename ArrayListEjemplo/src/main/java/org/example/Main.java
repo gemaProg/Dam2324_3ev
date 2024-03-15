@@ -7,9 +7,8 @@ import java.util.ArrayList;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-      public static void main(String[] args) {
+    public static void main(String[] args) {
         ArrayList<Integer> lista = new ArrayList();
-        lista.add(2);
         lista.add(10);
         for (int i = 0; i < 10; i++) {
             lista.add(i);
@@ -27,13 +26,17 @@ public class Main {
         }
         System.out.println(lista.size());
         System.out.println(listaNombres);
+        listaNombres.add(0, "Jorge");
+        listaNombres.add(8, "Jorge");
+        System.out.println(lista.size());
+        System.out.println(listaNombres);
 
         ArrayList<Palabra> listaPalabras = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             listaPalabras.add(new Palabra());
         }
-        String adivinar = listaPalabras.get((int)(Math.random()*listaPalabras.size())).getAdivinar();
-        for (int i = 0; i < adivinar.length() ; i++) {
+        String adivinar = listaPalabras.get((int) (Math.random() * listaPalabras.size())).getAdivinar();
+        for (int i = 0; i < adivinar.length(); i++) {
             System.out.print("_");
         }
     }

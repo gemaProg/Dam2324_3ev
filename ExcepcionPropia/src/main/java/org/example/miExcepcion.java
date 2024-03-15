@@ -2,7 +2,7 @@ package org.example;
 
 public class miExcepcion extends Exception{
     public miExcepcion() {
-        super("El número debe estar entre 1 y 10");
+        super("Cuidado. El número debe estar entre 1 y 10");
     }
 
     public miExcepcion(String message) {

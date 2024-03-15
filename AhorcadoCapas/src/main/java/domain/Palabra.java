@@ -34,6 +34,15 @@ public class Palabra implements Comparable<Palabra>{
         Comprobacion.categoriaOk(categoria);
         this.categoria = categoria;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getCategoria() {
         return categoria;
     }
@@ -58,4 +67,5 @@ public class Palabra implements Comparable<Palabra>{
                 ", categoria='" + categoria + '\'' +
                 '}'+"\n";
     }
+
 }

@@ -10,20 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Palabras {
-    private final ArrayList<Palabra> Palabras;
+    private final ArrayList<Palabra> palabras;
     private static int autonumerico;
 
     public Palabras() {
-        this.Palabras = new ArrayList<>();
+        this.palabras = new ArrayList<>();
 
         try {
-            Palabras.add(new Palabra(autonumerico++, 1, "El mejor verano de mi vida", Categoria.comedia.name()));
-            Palabras.add(new Palabra(autonumerico++, 1, "Misión Imposible IV fallout", Categoria.accion.name()));
+            palabras.add(new Palabra(autonumerico++, 1, "El mejor verano de mi vida", Categoria.comedia.name()));
+            palabras.add(new Palabra(autonumerico++, 1, "Misión Imposible IV fallout", Categoria.accion.name()));
 
             Faker faker = new Faker();
             String nombre = faker.gameOfThrones().character();
             for (int i = 0; i < 10; i++) {
-                Palabras.add(new Palabra(autonumerico++, 2, faker.pokemon().name(), Categoria.pokemon.name()));
+                palabras.add(new Palabra(autonumerico++, 2, faker.pokemon().name(), Categoria.pokemon.name()));
             }
         } catch (CategoriaException e) {
             System.out.println(e.getMessage());
@@ -32,7 +32,7 @@ public class Palabras {
     }
 
     public Palabras(ArrayList<Palabra> Palabras) {
-        this.Palabras = Palabras;
+        this.palabras = Palabras;
     }
 
     public static void setAutonumerico(int i) {
@@ -40,7 +40,7 @@ public class Palabras {
     }
 
     public List<Palabra> getListaPalabras() {
-        return Palabras;
+        return palabras;
     }
 
     public static int getAutonumerico() {
@@ -48,8 +48,22 @@ public class Palabras {
     }
 
     public void setListaPalabras(List<Palabra> Palabras) {
-        this.Palabras.clear();
-        this.Palabras.addAll(Palabras);
+        this.palabras.clear();
+        this.palabras.addAll(Palabras);
+    }
+
+    public boolean eliminaPalabra(int i) {
+        //i posicion
+        //palabras.remove(i);
+        //i -> id
+        boolean salir = false;
+        for (int j = 0; j < palabras.size() && !salir; j++) {
+            if (palabras.get(j).getId()==i) {
+                palabras.remove(j);
+                salir = true;
+            }
+        }
+        return salir;
     }
 }
 

@@ -1,17 +1,12 @@
 package ui;
 
 
-import common.Categoria;
-import common.CategoriaException;
-import common.Comprobacion;
-import net.datafaker.Faker;
-
 public class Main {
     public static void main(String[] args)  {
         //En el main sólo hay que llamar a los métodos de la UI que darán paso al luego o administrar diccionario.
 
-        GestionDiccionario gD= new GestionDiccionario();
-        gD.opciones(GestionDiccionario.mostrarMenu());
+        GestionArranque gD= new GestionArranque();
+        gD.opciones();
 
 
         //Este código no va aquí, pero es para que veáis cómo funciona ciertos aspectos de la aplicación a tener en cuenta
