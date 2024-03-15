@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="GenerandoDatosAleatorios" />
         <module name="Excepciones" />
         <module name="ExcepcionPropia" />
+        <module name="GenerandoDatosAleatorios" />
+        <module name="AhorcadoCapas" />
+        <module name="ArrayListEjemplo" />
       </profile>
     </annotationProcessing>
   </component>

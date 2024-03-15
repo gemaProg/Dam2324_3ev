@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -6,6 +7,8 @@
         <option value="$PROJECT_DIR$/Excepciones/pom.xml" />
         <option value="$PROJECT_DIR$/ExcepcionPropia/pom.xml" />
         <option value="$PROJECT_DIR$/GenerandoDatosAleatorios/pom.xml" />
+        <option value="$PROJECT_DIR$/AhorcadoCapas/pom.xml" />
+        <option value="$PROJECT_DIR$/ArrayListEjemplo/pom.xml" />
       </list>
     </option>
   </component>

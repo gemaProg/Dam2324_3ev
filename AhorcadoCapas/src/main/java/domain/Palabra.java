@@ -5,7 +5,7 @@ import common.CategoriaException;
 import common.Comprobacion;
 import dao.Palabras;
 
-public class Palabra {
+public class Palabra implements Comparable<Palabra>{
     private int id;
     private int level;
     private String incognita;
@@ -41,5 +41,21 @@ public class Palabra {
     public void setCategoria(String categoria) throws CategoriaException {
         Comprobacion.categoriaOk(categoria);
         this.categoria = categoria;
+    }
+
+    @Override
+    public int compareTo(Palabra o) {
+        //return Integer.compare(this.id,o.id);
+        return incognita.compareTo(o.incognita);
+    }
+
+    @Override
+    public String toString() {
+        return "Palabra{" +
+                "id=" + id +
+                ", level=" + level +
+                ", incognita='" + incognita + '\'' +
+                ", categoria='" + categoria + '\'' +
+                '}'+"\n";
     }
 }

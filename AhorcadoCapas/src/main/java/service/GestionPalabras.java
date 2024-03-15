@@ -28,7 +28,7 @@ public class GestionPalabras implements IGestionPalabras {
 
     @Override
     public List<Palabra> getListaPalabras() {
-        return null;
+        return daoPalabras.getPalabras(true);
     }
 
     @Override
