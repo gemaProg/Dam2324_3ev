@@ -2,10 +2,10 @@ package org.example;
 
 import net.datafaker.Faker;
 
-import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("------------------Baloncesto---------------------------");
         for (int i = 0; i < 10 ; i++) {
             System.out.println(new Faker().basketball().positions());
@@ -21,6 +21,10 @@ public class Main {
         System.out.println("---------------Cómo entrenar a tu dragon------------------------------");
         for (int i = 0; i < 10 ; i++) {
             System.out.println(new Faker().howToTrainYourDragon().characters());
+        }
+        System.out.println("---------------Big bang theory-----------------------------");
+        for (int i = 0; i < 10 ; i++) {
+            System.out.println(new Faker().bigBangTheory().character());
         }
     }
 
