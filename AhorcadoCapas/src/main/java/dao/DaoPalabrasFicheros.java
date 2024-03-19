@@ -18,6 +18,11 @@ public class DaoPalabrasFicheros {
         if (!fichero2.exists())
             fichero2.createNewFile();
     }
+    public static void crearFicheros(String nombreFichero) throws IOException {
+        File fichero1 = new File(nombreFichero);
+        if (!fichero1.exists())
+            fichero1.createNewFile();
+    }
     public static List<Palabra> leerFichero() throws IOException {
         return leerFichero(DaoPalabrasFicheros.FICHERO);
     }
@@ -29,7 +34,7 @@ public class DaoPalabrasFicheros {
             while (sc.hasNextLine()) {
                 String cadena = sc.nextLine();
                 String[] trozos = cadena.split(";");
-                //crear Palabra y añadirlo a auxiliar.
+
 
             };
         } catch (FileNotFoundException ex) {
@@ -39,6 +44,42 @@ public class DaoPalabrasFicheros {
 
         return auxiliar;
 
+    }
+
+    public static void escribirFicheroConsola(String nombreFichero) throws FileNotFoundException {
+        Scanner lector = new Scanner(System.in);
+        String cadena = null;
+        PrintWriter pw = new PrintWriter(nombreFichero);
+        System.out.println("Introduce las líneas que quieras escribir en el fichero, para acabar pon FIN");
+        do{
+            cadena = lector.nextLine();
+            if (!cadena.equalsIgnoreCase("fin"))
+                pw.println(cadena);
+        }while (!cadena.equalsIgnoreCase("fin"));
+        pw.close();
+    }
+    public static void LeerFichero (String nombreFichero) throws FileNotFoundException {
+        Scanner lector = new Scanner(new File(nombreFichero));
+        String cadena;
+        while(lector.hasNextLine()){
+            System.out.println(lector.nextLine());
+        }
+        System.out.println("Se ha alcanzado el final del fichero");
+    }
+    public static void escribirFicheroConsolaNoSobreescribir(String nombreFichero) throws IOException {
+        Scanner lector = new Scanner(System.in);
+        String cadena = null;
+        /*FileWriter fw = new FileWriter(nombreFichero,true);
+        PrintWriter pw1 = new PrintWriter(fw);*/
+        PrintWriter pw = new PrintWriter(new FileWriter(nombreFichero,true));
+
+        System.out.println("Introduce las líneas que quieras escribir en el fichero, para acabar pon FIN");
+        do{
+            cadena = lector.nextLine();
+            if (!cadena.equalsIgnoreCase("fin"))
+                pw.println(cadena);
+        }while (!cadena.equalsIgnoreCase("fin"));
+        pw.close();
     }
 
     /**
@@ -69,4 +110,6 @@ public class DaoPalabrasFicheros {
         }
         return escrito;
     }
+
+
   }
