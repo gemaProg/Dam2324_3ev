@@ -14,6 +14,7 @@ public class Palabras {
     private static int autonumerico;
 
     public Palabras() {
+        //Aquí leer fichero cuando ya esté el fichero creado con las palabras del DataFaker
         this.palabras = new ArrayList<>();
 
         try {

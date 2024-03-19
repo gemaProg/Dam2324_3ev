@@ -1,6 +1,7 @@
 package ui;
 
 import common.Constantes;
+import net.datafaker.providers.entertainment.SouthPark;
 import service.GestionPalabras;
 import service.IGestionPalabras;
 
@@ -34,6 +35,8 @@ public class GestionArranque {
     public void opciones(){
         int opcion = mostrarMenu();
         switch(opcion){
+            case 0:
+                System.out.println(servicio.escribirFichero());
             case 1:
                 System.out.println(servicio.getListaPalabras());
             case 4:

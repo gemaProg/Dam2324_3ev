@@ -35,6 +35,15 @@ public class Palabra implements Comparable<Palabra>{
         this.categoria = categoria;
     }
 
+    public Palabra(String cadena) throws CategoriaException {
+        String[] trozos = cadena.split(";");
+        this.id = Integer.parseInt(trozos[0]);
+        this.level = Integer.parseInt(trozos[1]);
+        this.incognita = trozos[2];
+        Comprobacion.categoriaOk(trozos[3]);
+        this.categoria = trozos[3];
+    }
+
     public int getId() {
         return id;
     }
@@ -66,6 +75,9 @@ public class Palabra implements Comparable<Palabra>{
                 ", incognita='" + incognita + '\'' +
                 ", categoria='" + categoria + '\'' +
                 '}'+"\n";
+    }
+    public String toStringFichero() {
+        return id + ";" + level + ";"+ incognita+ ";"+ categoria;
     }
 
 }
