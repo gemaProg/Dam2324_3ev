@@ -34,6 +34,7 @@ public class DaoPalabrasFicheros {
             while (sc.hasNextLine()) {
                 String cadena = sc.nextLine();
                 String[] trozos = cadena.split(";");
+                //Palabra palabra=
 
 
             };
