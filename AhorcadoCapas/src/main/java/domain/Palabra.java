@@ -5,6 +5,8 @@ import common.CategoriaException;
 import common.Comprobacion;
 import dao.Palabras;
 
+import java.util.Objects;
+
 public class Palabra implements Comparable<Palabra>{
     private int id;
     private int level;
@@ -80,4 +82,16 @@ public class Palabra implements Comparable<Palabra>{
         return id + ";" + level + ";"+ incognita+ ";"+ categoria;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Palabra palabra = (Palabra) o;
+        return Objects.equals(incognita, palabra.incognita);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, level, incognita, categoria);
+    }
 }

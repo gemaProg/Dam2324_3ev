@@ -74,6 +74,7 @@ public class DaoPalabrasFicheros {
             }
         } while (cadena != null);
     return auxiliar;
+
 }
 
     public static boolean escribirFichero(List<Palabra> lista, String nombreFichero) throws FileNotFoundException {
