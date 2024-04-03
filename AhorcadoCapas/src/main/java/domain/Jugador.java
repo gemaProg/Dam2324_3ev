@@ -1,5 +1,19 @@
 package domain;
 
-public class Jugador {
+import java.io.Serializable;
+
+public class Jugador implements Serializable {
     //opcional nombre,
+    String nombre;
+
+    public Jugador(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Jugador{" +
+                "nombre='" + nombre + '\'' +
+                '}';
+    }
 }

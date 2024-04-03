@@ -43,7 +43,6 @@ public class GestionPalabras implements IGestionPalabras {
         return false;
     }
 
-
     @Override
     public List<Palabra> listar(String categoria) {
         return null;

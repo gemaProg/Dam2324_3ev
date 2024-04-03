@@ -1,6 +1,7 @@
 package dao;
 
 import common.CategoriaException;
+import domain.Juego;
 import domain.Palabra;
 
 import java.io.*;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 
 public class DaoPalabrasFicheros {
     public static final String FICHERO = "Fichero";
-    public static final String FICHEROB = "FicheroBinario";
+    public static final String FICHEROB = "Partida";
 
     public static void crearFicheros() throws IOException {
         File fichero1 = new File(FICHERO);
@@ -144,11 +145,32 @@ public class DaoPalabrasFicheros {
         return auxiliar;
     }
 
+    public static Juego leerFicheroBinarioRecuperarPartida() {
+        Juego auxiliar = null;
+        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream(FICHEROB))) {
+            auxiliar = (Juego) is.readObject();
+
+        } catch (IOException | ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(DaoPalabrasFicheros.class.getName()).log(java.util.logging.Level.SEVERE, ex.getMessage(), ex);
+
+        }
+        return auxiliar;
+    }
 
     public static boolean escribirFicheroBinario(List<Palabra> Palabras) {
         boolean escrito = false;
         try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(FICHEROB))) {
             os.writeObject(Palabras);
+            escrito = true;
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(DaoPalabrasFicheros.class.getName()).log(java.util.logging.Level.SEVERE, ex.getMessage(), ex);
+        }
+        return escrito;
+    }
+    public static boolean escribirFicheroBinarioGuardarPartida(Juego juego) {
+        boolean escrito = false;
+        try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(FICHEROB))) {
+            os.writeObject(juego);
             escrito = true;
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(DaoPalabrasFicheros.class.getName()).log(java.util.logging.Level.SEVERE, ex.getMessage(), ex);

@@ -5,9 +5,10 @@ import common.CategoriaException;
 import common.Comprobacion;
 import dao.Palabras;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Palabra implements Comparable<Palabra>{
+public class Palabra implements Comparable<Palabra>, Serializable {
     private int id;
     private int level;
     private String incognita;
@@ -93,5 +94,13 @@ public class Palabra implements Comparable<Palabra>{
     @Override
     public int hashCode() {
         return Objects.hash(id, level, incognita, categoria);
+    }
+
+    public String getIncognita() {
+        return incognita;
+    }
+
+    public void setIncognita(String incognita) {
+        this.incognita = incognita;
     }
 }
