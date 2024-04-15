@@ -43,8 +43,8 @@ public class Censo implements Serializable {
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Félix",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Máximo",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Maksim",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "DanielM",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "DanielS",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 10)+18, "Daniel Muñoz",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 10)+18, "Daniel Sánchez",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Jorge Navarro",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Jorge Novillo",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Diego Fabrizio",provincias[(int)(Math.random()*5)] ));
@@ -88,8 +88,7 @@ public class Censo implements Serializable {
 
         //3. stream, foreach y referencia a método
         System.out.println("-------------------------3-------------------------");
-        //censo.stream().forEach(System.out::println);
-        censo.forEach(System.out::println);
+        censo.stream().forEach(System.out::println);
 
         //4.foreach y referencia a método
         System.out.println("-------------------------3-------------------------");
@@ -106,17 +105,17 @@ public class Censo implements Serializable {
         }
         //1. foreach
         System.out.println("---------------------1--------------------");
-        for (Individuo individuo: censo) {
-            if (individuo.nombre.equalsIgnoreCase(nombre)) {
-                System.out.println(individuo);
+        for (Individuo aux: censo) {
+            if (aux.nombre.equalsIgnoreCase(nombre)) {
+                System.out.println(aux);
             }
         }
         //2. stream, lambda y filter (filtrar)
         System.out.println("---------------------2--------------------");
-        censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).forEach(individuo -> System.out.println(individuo));
-
+        censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).forEach(in-> System.out.println(in));
         //3. stream, referencia a método y filter (filtrar)
         System.out.println("---------------------3--------------------");
+        //censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).forEach(Individuo::imprimir);
         censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).forEach(System.out::println);
     }
 
@@ -158,13 +157,13 @@ public class Censo implements Serializable {
         }
         //2. stream, lambda y filter (filtrar)
         System.out.println("---------------------2--------------------");
-        censo.stream().filter(individuo -> individuo.edad>edad).forEach(individuo -> System.out.print(individuo));
+        censo.stream().filter(individuo -> individuo.edad > edad ).forEach(individuo -> System.out.print(individuo));
         //3. stream, y filter (filtrar)referencia a método
         System.out.println("---------------------3--------------------");
-        censo.stream().filter(individuo -> individuo.edad>edad).forEach(System.out::print);
+        censo.stream().filter(individuo -> individuo.edad > edad).forEach(System.out::print);
     }
 
-    public int individuosConteoProvincia(String provincia){
+    public long individuosConteoProvincia(String provincia){
         /*int contador = 0;
         for (int i = 0; i < censo.size(); i++) {
             if (censo.get(i).poblacion.equalsIgnoreCase(provincia)) {
@@ -172,7 +171,7 @@ public class Censo implements Serializable {
             }
         }
         return contador;*/
-        return (int)censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).count();
+        return censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).count();
     }
     public void mostrarMayores(int edad, String provincia) {
         for (int i = 0; i < censo.size(); i++) {
@@ -191,9 +190,10 @@ public class Censo implements Serializable {
         System.out.println();
         //2. stream, lambda y filter (filtrar)
         System.out.println("---------------------2--------------------");
-        censo.stream().filter(individuo -> individuo.edad>edad && individuo.poblacion.equalsIgnoreCase(provincia)).forEach(individuo -> System.out.print(individuo));
+        //censo.stream().filter(individuo -> individuo.edad>edad && individuo.poblacion.equalsIgnoreCase(provincia)).forEach(individuo -> System.out.print(individuo));
+        censo.stream().filter(individuo -> individuo.edad>edad).filter(individuo->individuo.poblacion.equalsIgnoreCase(provincia)).forEach(individuo -> System.out.print(individuo));
     }
-    public int maxEdadrovincia(String provincia){
+    public double maxEdadrovincia(String provincia){
         /*int maximo = 0;
         for (int i = 0; i < censo.size(); i++) {
             if (censo.get(i).poblacion.equalsIgnoreCase(provincia) && censo.get(i).edad>maximo) {
@@ -209,13 +209,19 @@ public class Censo implements Serializable {
             }
         }
         return maximo;*/
-        return censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).mapToInt(individuo->individuo.edad).max().orElse(0);
+        return censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).mapToInt(individuo->individuo.edad).average().orElse(0);
         //si no encuentra devuelve 0 como edad máxima.
         //lo mismo con min, average (hacerlo), sum
     }
     public void mapeoIndividuosCadenas(){
         censo.stream().map(individuo -> individuo.nombre).sorted().forEach(System.out::println);
         System.out.println("-------------sólo distintos---------");
+        /*censo.stream().map(individuo -> individuo.nombre).sorted(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return Integer.compare(o1.length(),o2.length());
+            }
+        }).forEach(System.out::println);*/
         censo.stream().map(individuo -> individuo.nombre).distinct().sorted().forEach(System.out::println);
         System.out.println();
         censo.stream().map(individuo -> individuo.poblacion).sorted().forEach(System.out::println);

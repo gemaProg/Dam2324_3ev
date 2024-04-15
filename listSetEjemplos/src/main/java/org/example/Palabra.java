@@ -5,12 +5,12 @@
 package org.example;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
- *
  * @author gema
  */
-public class Palabra implements Comparable<Palabra>,Serializable{
+public class Palabra implements Comparable<Palabra> {
     private int id;
     private int nivel;
     private String categoriaString;
@@ -57,10 +57,11 @@ public class Palabra implements Comparable<Palabra>,Serializable{
 
     @Override
     public String toString() {
-        return "Elemento{" + "id=" + id + ", nivel=" + nivel + ", categoriaString=" + categoriaString + ", adivinarString=" + adivinarString + '}';
+        return getClass().getSimpleName()+"{" + "id=" + id + ", nivel=" + nivel + ", categoriaString=" + categoriaString + ", adivinarString=" + adivinarString + '}';
     }
+
     public String toStringFichero() {
-        return id+";"+ nivel+";"+categoriaString+";"+adivinarString;
+        return id + ";" + nivel + ";" + categoriaString + ";" + adivinarString;
     }
 
     @Override
@@ -70,26 +71,19 @@ public class Palabra implements Comparable<Palabra>,Serializable{
         return hash;
     }
 
+
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Palabra other = (Palabra) obj;
-        return this.id == other.id;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Palabra palabra = (Palabra) o;
+        return id == palabra.id && nivel == palabra.nivel && Objects.equals(categoriaString, palabra.categoriaString) && Objects.equals(adivinarString, palabra.adivinarString);
     }
 
-    
     @Override
     public int compareTo(Palabra o) {
         return this.adivinarString.compareTo(o.adivinarString);
         //return Integer.compare(id, o.id);
     }
-    
+
 }

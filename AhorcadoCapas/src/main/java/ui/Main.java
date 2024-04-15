@@ -54,8 +54,7 @@ public class Main {
             }
             juego.jugando();
             System.out.println(juego);
-        }
-        else {
+        } else {
             juego = DaoPalabrasFicheros.leerFicheroBinarioRecuperarPartida();
             System.out.println(juego);
         }

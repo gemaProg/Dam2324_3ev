@@ -6,11 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Excepciones" />
-        <module name="ExcepcionPropia" />
         <module name="GenerandoDatosAleatorios" />
-        <module name="AhorcadoCapas" />
         <module name="ArrayListEjemplo" />
+        <module name="ordenar" />
+        <module name="Censo" />
+        <module name="MapEjemplos" />
+        <module name="Excepciones" />
+        <module name="ListSetEjemplos" />
+        <module name="ExcepcionPropia" />
+        <module name="AhorcadoCapas" />
       </profile>
     </annotationProcessing>
   </component>

@@ -70,7 +70,7 @@ public class Individuo implements Serializable, Comparable<Individuo>{
   
     @Override
     public String toString() {
-        return String.format("%-15s %4d %15s",nombre, edad, poblacion);
+        return String.format("%-15s %4d %15s ",nombre, edad, poblacion);
     }
 
     public String toStringFichero() {
@@ -86,6 +86,9 @@ public class Individuo implements Serializable, Comparable<Individuo>{
         return this.nombre.compareTo(t.nombre);
     }
 
+    public void imprimir(){
+        System.out.println(nombre+ "     "+ edad);
+    }
    
     
 }

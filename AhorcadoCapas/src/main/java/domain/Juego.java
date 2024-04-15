@@ -32,7 +32,7 @@ public class Juego implements Serializable {
     public void jugando() {
         incognita = aAdivinar.getIncognita().toCharArray();
         for (int i = 0; i < incognita.length; i++) {
-            incognita[i]='-';
+            incognita[i]='_';
         }
         incognita[2]='s';
 

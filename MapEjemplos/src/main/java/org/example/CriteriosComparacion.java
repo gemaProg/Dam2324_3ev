@@ -13,24 +13,6 @@ import java.util.Comparator;
 public class CriteriosComparacion {
     
 }
-class porNivel implements Comparator<Palabra>{
-    @Override
-    public int compare(Palabra o1, Palabra o2) {
-        return Integer.compare(o1.getNivel(),o2.getNivel());
-    }
-}
-class porIncognita implements Comparator<Palabra>{
-    @Override
-    public int compare(Palabra o1, Palabra o2) {
-        return o1.getAdivinarString().compareTo(o2.getAdivinarString());
-    }
-}
-class porCategoria implements Comparator<Palabra> {
-    @Override
-    public int compare(Palabra o1, Palabra o2) {
-        return o1.getCategoriaString().compareTo(o2.getCategoriaString());
-    }
-}
 class porLongitud implements Comparator<String>{
 
     @Override

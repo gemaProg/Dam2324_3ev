@@ -173,7 +173,7 @@ public class DaoPalabrasFicheros {
             os.writeObject(juego);
             escrito = true;
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(DaoPalabrasFicheros.class.getName()).log(java.util.logging.Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("Error de E/S");
         }
         return escrito;
     }

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Jugador implements Serializable {
     //opcional nombre,
-    String nombre;
+    protected String nombre;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
