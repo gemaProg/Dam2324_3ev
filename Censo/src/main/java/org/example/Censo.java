@@ -343,7 +343,7 @@ public class Censo implements Serializable {
         System.out.println("orden poblacion----");
         listar();
 
-        System.out.println("---------------------con streams---------------------");
+        System.out.println("---------------------Con streams---------------------");
         System.out.println("orden natural----");
         censo.stream().sorted().forEach(System.out::println);
         System.out.println("por orden de edad----");
