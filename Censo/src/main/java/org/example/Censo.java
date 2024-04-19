@@ -40,7 +40,11 @@ public class Censo implements Serializable {
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Claudia",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Aitor",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Óscar",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Félix",provincias[(int)(Math.random()*5)] ));
+
+        for (int i = 0; i < 10; i++) {
+            censo.add(new Individuo((int) (Math.random() * 10)+18, "Félix",provincias[(int)(Math.random()*5)] ));
+        }
+
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Máximo",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Maksim",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 10)+18, "Daniel Muñoz",provincias[(int)(Math.random()*5)] ));
@@ -117,6 +121,19 @@ public class Censo implements Serializable {
         System.out.println("---------------------3--------------------");
         //censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).forEach(Individuo::imprimir);
         censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).forEach(System.out::println);
+
+        List<Individuo> list = censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).toList();
+        List<String> listProvincias = list.stream().map(i->i.getPoblacion()).toList();
+        System.out.println("---------------");
+        System.out.println(listProvincias);
+        List<String> listProvinciasRM = list.stream().map(Individuo::getPoblacion).toList();
+        System.out.println("---------------");
+        System.out.println(listProvinciasRM);
+        Set<String> setProvinciasRMdistintas = list.stream().map(Individuo::getPoblacion).collect(toSet());
+        List<String> listProvinciasRMdistintas2 = list.stream().map(Individuo::getPoblacion).distinct().toList();
+        System.out.println("---------------");
+        System.out.println(listProvinciasRMdistintas2);
+
     }
 
     public void mostrarPoblacion(String poblacion) {

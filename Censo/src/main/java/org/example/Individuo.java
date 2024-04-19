@@ -81,14 +81,15 @@ public class Individuo implements Serializable, Comparable<Individuo>{
         return String.format("%-12s %2d",nombre, edad);
     }
 
-    @Override
-    public int compareTo(Individuo t) {
-        return this.nombre.compareTo(t.nombre);
-    }
+
 
     public void imprimir(){
         System.out.println(nombre+ "     "+ edad);
     }
-   
-    
+
+
+    @Override
+    public int compareTo(Individuo o) {
+        return this.nombre.compareTo(o.nombre);
+    }
 }

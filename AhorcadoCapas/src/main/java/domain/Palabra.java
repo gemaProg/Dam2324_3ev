@@ -70,6 +70,14 @@ public class Palabra implements Comparable<Palabra>, Serializable {
         return incognita.compareTo(o.incognita);
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     @Override
     public String toString() {
         return "Palabra{" +
@@ -86,14 +94,13 @@ public class Palabra implements Comparable<Palabra>, Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Palabra palabra = (Palabra) o;
-        return Objects.equals(incognita, palabra.incognita);
+        if (!(o instanceof Palabra palabra)) return false;
+        return getId() == palabra.getId() ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, level, incognita, categoria);
+        return Objects.hash(getId());
     }
 
     public String getIncognita() {

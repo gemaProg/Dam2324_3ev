@@ -7,9 +7,7 @@ import domain.Palabra;
 import net.datafaker.Faker;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class Palabras {
     private final List<Palabra> palabras;
@@ -69,6 +67,14 @@ public class Palabras {
             }
         }
         return salir;
+    }
+    public void ordenar(){
+        palabras.sort(new Comparator<Palabra>() {
+            @Override
+            public int compare(Palabra o1, Palabra o2) {
+                return o1.getIncognita().compareTo(o2.getIncognita());
+            }
+        });
     }
 
 }

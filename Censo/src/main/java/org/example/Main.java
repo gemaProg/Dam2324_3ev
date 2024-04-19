@@ -36,6 +36,7 @@ public class Main {
                         System.out.println("Dime nombre");
                         String nombre = br.readLine();
                         censo.mostrar(nombre);
+
                         break;
                     case 4:
                         System.out.println("Dime poblacion");
