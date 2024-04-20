@@ -35,33 +35,33 @@ public class Censo implements Serializable {
             censo.add(aux);
             censo.add(new Individuo((int) (Math.random() * 100), "individuo" + (i + 1), "provincia" + (i % 3)));
         }*/
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Olga",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Sergio",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Claudia",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Aitor",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Óscar",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Olga",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Sergio",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Claudia",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Aitor",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Óscar",provincias[(int)(Math.random()*5)] ));
 
         for (int i = 0; i < 10; i++) {
-            censo.add(new Individuo((int) (Math.random() * 10)+18, "Félix",provincias[(int)(Math.random()*5)] ));
+            censo.add(new Individuo((int) (Math.random() * 5)+18, "Félix",provincias[(int)(Math.random()*5)] ));
         }
 
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Máximo",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Maksim",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Daniel Muñoz",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Daniel Sánchez",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Jorge Navarro",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Jorge Novillo",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Diego Fabrizio",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Franklin",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Diego Pacheco",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Milton",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Adrián",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Marcos",provincias[(int)(Math.random()*5)]));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Iván",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Adriel",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Nerea",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Mario",provincias[(int)(Math.random()*5)] ));
-        censo.add(new Individuo((int) (Math.random() * 10)+18, "Marta",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Máximo",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Maksim",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Daniel Muñoz",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Daniel Sánchez",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Jorge Navarro",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Jorge Novillo",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Diego Fabrizio",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Franklin",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Diego Pacheco",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Milton",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Adrián",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Marcos",provincias[(int)(Math.random()*5)]));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Iván",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Adriel",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Nerea",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Mario",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Marta",provincias[(int)(Math.random()*5)] ));
        
         //sucesivas, carga de fichero
         //censo = GestorFicheros.leerFicheroBinario(GestorFicheros.FICHERO_BINARIO).censo;
@@ -133,6 +133,9 @@ public class Censo implements Serializable {
         List<String> listProvinciasRMdistintas2 = list.stream().map(Individuo::getPoblacion).distinct().toList();
         System.out.println("---------------");
         System.out.println(listProvinciasRMdistintas2);
+        List<Integer> edadesProvincia = list.stream().map(Individuo::getEdad).toList();
+        System.out.println("---------------");
+        System.out.println(edadesProvincia);
 
     }
 
@@ -253,7 +256,7 @@ public class Censo implements Serializable {
     }
     //Estadística con el uso de Map.
 
-    public List listaPorProvincia (String provincia){
+    public List<Individuo> listaPorProvincia (String provincia){
         return censo.stream().filter(i->i.poblacion.equalsIgnoreCase(provincia)).toList();
     }
     private List<Individuo> listaIndividuosProvincia(String provincia) {
@@ -281,7 +284,9 @@ public class Censo implements Serializable {
         porProvincia.forEach((k,v)-> System.out.println("Provincia: "+ k+ " "+v.stream().map(Individuo::getNombre).toList()));
 
 
-        System.out.println("NÚMERO INDIVIDUOS POR PROVINCIA");
+        System.out.println("NÚMERO INDIVIDUOS POR EDAD");
+        Map<Integer,List<Individuo> >porEdadIndividuos = censo.stream().collect(groupingBy(Individuo::getEdad));
+        porEdadIndividuos.forEach((k,v)-> System.out.printf("%3d  %s \n",k,v.stream().map(Individuo::getNombre).toList()));
 
         Map<String,Long> porProvinciaConteo = censo.stream().collect(groupingBy(Individuo::getPoblacion, counting()));
         porProvinciaConteo.forEach((k, v) -> System.out.printf("%-30s | %s %n", k, porProvinciaConteo.get(k)));
@@ -293,8 +298,8 @@ public class Censo implements Serializable {
 
         System.out.println("LISTADO INDIVIDUOS AGRUPADOS POR PROVINCIA");
         porProvincia.forEach((k, v) -> {
-            String strIndividuos = v.stream().map(Individuo::toNombreEdad).collect(joining(", ")); //joining unión en cadena
-            System.out.printf("%-30s | %s %n", k, strIndividuos);
+            String strIndividuos = v.stream().map(Individuo::toNombreEdad).collect(joining("| ")); //joining unión en cadena
+            System.out.printf("%-40s | %s %n", k, strIndividuos);
         });
 
 
@@ -357,10 +362,9 @@ public class Censo implements Serializable {
     }
 
     public List eliminarIndividuosProvincia(String provincia){
-        //censo.removeAll(censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).collect(Collectors.toList()));
-        /*censo.removeAll(censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).toList());
+        censo.removeAll(censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).toList());
         System.out.println("ELiminando");
-        listar();*/
+        listar();
         return censo.stream().filter(individuo -> !individuo.poblacion.equalsIgnoreCase(provincia)).collect(Collectors.toList());
 
     }
