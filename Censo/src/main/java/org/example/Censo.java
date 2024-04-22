@@ -40,12 +40,10 @@ public class Censo implements Serializable {
         censo.add(new Individuo((int) (Math.random() * 5)+18, "Claudia",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 5)+18, "Aitor",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 5)+18, "Óscar",provincias[(int)(Math.random()*5)] ));
-
-        for (int i = 0; i < 10; i++) {
-            censo.add(new Individuo((int) (Math.random() * 5)+18, "Félix",provincias[(int)(Math.random()*5)] ));
-        }
-
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Félix",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 5)+18, "Máximo",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Maksim",provincias[(int)(Math.random()*5)] ));
+        censo.add(new Individuo((int) (Math.random() * 5)+18, "Maksim",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 5)+18, "Maksim",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 5)+18, "Daniel Muñoz",provincias[(int)(Math.random()*5)] ));
         censo.add(new Individuo((int) (Math.random() * 5)+18, "Daniel Sánchez",provincias[(int)(Math.random()*5)] ));
@@ -273,16 +271,19 @@ public class Censo implements Serializable {
             //individuos.put(provincias[i],listaIndividuosProvincia(provincias[i]) );
             mapaIndividuos.put(provincias[i],listaPorProvincia(provincias[i]));
         }
-        for (String provincia: provincias) {
-            System.out.print(provincia+ ": ");
-            for (Individuo individuo: mapaIndividuos.get(provincia))
-                System.out.print(individuo.nombre +", ");
+        for (String poblacion: provincias) {
+            System.out.print(poblacion+ ": ");
+            List<Individuo> list =  mapaIndividuos.get(poblacion);
+            for(Individuo individuo: list){
+                System.out.print(individuo.nombre+ ", ");
+            }
+            /*for (Individuo individuo: mapaIndividuos.get(poblacion))
+                System.out.print(individuo.nombre +", ");*/
             System.out.println();
         }
 
         Map<String,List<Individuo>> porProvincia = censo.stream().collect(groupingBy(Individuo::getPoblacion));
-        porProvincia.forEach((k,v)-> System.out.println("Provincia: "+ k+ " "+v.stream().map(Individuo::getNombre).toList()));
-
+        porProvincia.forEach((k,v)-> System.out.println("Provincia: "+ k+ " "+v.stream().map(Individuo::getEdad).toList()));
 
         System.out.println("NÚMERO INDIVIDUOS POR EDAD");
         Map<Integer,List<Individuo> >porEdadIndividuos = censo.stream().collect(groupingBy(Individuo::getEdad));
@@ -315,7 +316,7 @@ public class Censo implements Serializable {
 
     public void actualizarPoblacion(String nombre, String poblacion) throws IOException {
         //1. foreach
-        for (Individuo individuo : censo) {
+        /*for (Individuo individuo : censo) {
             if (individuo.nombre.equalsIgnoreCase(nombre)) {
                 individuo.poblacion = poblacion;
             }
@@ -323,11 +324,12 @@ public class Censo implements Serializable {
         //2. Stream
         Individuo encontrado = censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).findFirst().orElse(null);
         if(encontrado!=null)
-            encontrado.poblacion=poblacion;
+            encontrado.poblacion=poblacion;*/
 
         //2a. Stream y chequeo si null directamente
-        censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).findFirst().ifPresent(individuo -> individuo.poblacion = poblacion);
-
+        censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).findAny().ifPresent(individuo -> individuo.poblacion = poblacion);
+        //modificar a todos no utilizaríamos ni findAny ni findFirst
+        //censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).forEach(individuo -> individuo.poblacion = poblacion);
     }
     public void alta() throws IOException {
        /* Individuo aux = Alta();
@@ -361,12 +363,10 @@ public class Censo implements Serializable {
         }
     }
 
-    public List eliminarIndividuosProvincia(String provincia){
-        censo.removeAll(censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).toList());
-        System.out.println("ELiminando");
-        listar();
-        return censo.stream().filter(individuo -> !individuo.poblacion.equalsIgnoreCase(provincia)).collect(Collectors.toList());
-
+    public List<Individuo> eliminarIndividuosProvincia(String provincia){
+       /* censo.removeAll(censo.stream().filter(individuo -> individuo.poblacion.equalsIgnoreCase(provincia)).toList());
+        return censo;*/
+        return censo.stream().filter(individuo -> !individuo.poblacion.equalsIgnoreCase(provincia)).toList(); //en realidad no elimina, es sólo consulta
     }
 
     public void ordenar() {
@@ -398,7 +398,7 @@ public class Censo implements Serializable {
         }).forEach(System.out::println);
     }
     public List devolverListadoOrdenado (boolean ascendente){
-        return censo.stream().sorted(ascendente ? new porPoblacion() : new porPoblacion().reversed()).collect(Collectors.toList());
+        return censo.stream().sorted(ascendente ? new porPoblacion() : new porPoblacion().reversed()).toList();
     }
 
 }
