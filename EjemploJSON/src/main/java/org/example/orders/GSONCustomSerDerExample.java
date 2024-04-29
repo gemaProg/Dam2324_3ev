@@ -35,7 +35,7 @@ public class GSONCustomSerDerExample {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-
+/*
         String orderJson = "{\r\n" + "  \"id\": 100,\r\n" + "  \"orderName\": \"Book purchase\",\r\n" +
                 "  \"orderDesc\": \"Java Head First\",\r\n" + "  \"orderCreatedDate\": \"26-Oct-2018\",\r\n" +
                 "  \"orderCreatedDateTime\": \"26::Oct::2018 11::09::05\",\r\n" +
@@ -43,7 +43,7 @@ public class GSONCustomSerDerExample {
         // Convert to java objects
         Order one = gson.fromJson(orderJson, Order.class);
         System.out.println(one);
-
+*/
     }
 
 }
