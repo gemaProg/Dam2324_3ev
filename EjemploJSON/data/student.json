@@ -1,16 +1,16 @@
 {
-  "studentId": 11,
-  "studentName": "Student11",
+  "studentId": 6,
+  "studentName": "Student6",
   "studentPhoneNumbers": [
-    {
-      "phoneId": 100,
-      "phoneType": "MobilePhone",
-      "phoneNumber": "1234567890"
-    },
     {
       "phoneId": 101,
       "phoneType": "LandLinePhone",
       "phoneNumber": "0987654321"
+    },
+    {
+      "phoneId": 100,
+      "phoneType": "MobilePhone",
+      "phoneNumber": "1234567890"
     }
   ]
 }
