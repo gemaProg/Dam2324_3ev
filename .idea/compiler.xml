@@ -2,19 +2,21 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="GenerandoDatosAleatorios" />
         <module name="ArrayListEjemplo" />
-        <module name="ordenar" />
         <module name="Censo" />
+        <module name="ordenar" />
         <module name="MapEjemplos" />
         <module name="Excepciones" />
         <module name="ListSetEjemplos" />
         <module name="ExcepcionPropia" />
         <module name="AhorcadoCapas" />
+        <module name="EjemploJSON" />
       </profile>
     </annotationProcessing>
   </component>

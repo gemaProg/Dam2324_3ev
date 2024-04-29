@@ -7,16 +7,18 @@
     <file url="file://$PROJECT_DIR$/ArrayListEjemplo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Censo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Censo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EjemploJSON/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EjemploJSON/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ExcepcionPropia/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ExcepcionPropia/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Excepciones/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Excepciones/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GenerandoDatosAleatorios/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GenerandoDatosAleatorios/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ListSetEjemplos/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ListSetEjemplos/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MapEjemplos/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MapEjemplos/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/listSetEjemplos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/listSetEjemplos/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ordenar/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ordenar/src/main/resources" charset="UTF-8" />
   </component>

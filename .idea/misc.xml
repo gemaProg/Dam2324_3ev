@@ -13,9 +13,9 @@
         <option value="$PROJECT_DIR$/ListSetEjemplos/pom.xml" />
         <option value="$PROJECT_DIR$/MapEjemplos/pom.xml" />
         <option value="$PROJECT_DIR$/Censo/pom.xml" />
+        <option value="$PROJECT_DIR$/EjemploJSON/pom.xml" />
       </list>
     </option>
-    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
